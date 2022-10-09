@@ -1,5 +1,3 @@
-package packages;
-
 import java.util.*;
 import packages.package1;
 
