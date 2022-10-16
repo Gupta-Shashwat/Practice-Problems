@@ -31,7 +31,6 @@ void create(node *s)
 
 int count(node *s)
 {
-    printf("Count function called!\n");
     int c = 0;
     while (s != NULL)
     {
@@ -109,7 +108,7 @@ node *insert(node *s)
         s->next = t;
         return u;
     }
-    printf("You entered a wrong value for position!!! \nNo value inserted!!!");
+    printf("You entered a wrong value for position!!! \nNo value inserted!!!\n");
 }
 
 node *delete (node *s)
@@ -148,7 +147,7 @@ node *delete (node *s)
         free(t);
         return u;
     }
-    printf("You entered a wrong postion for deletion!!! \nNothing deleted!!!");
+    printf("You entered a wrong postion for deletion!!! \nNothing deleted!!!\n");
 }
 
 void main()
