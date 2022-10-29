@@ -7,6 +7,43 @@ typedef struct s
     int num;
 } node;
 
+node *merge(node *s1, node *s2)
+{
+    node *start = (node *)malloc(sizeof(node));
+    node *u = start;
+    while (s1 != NULL)
+    {
+        start->num = s1->num;
+        start->next = (node *)malloc(sizeof(node));
+        start = start->next;
+        s1 = s1->next;
+    }
+    while (s2->next != NULL)
+    {
+        start->num = s2->num;
+        start->next = (node *)malloc(sizeof(node));
+        start = start->next;
+        s2 = s2->next;
+    }
+    start->num = s2->num;
+    start->next = NULL;
+    return u;
+}
+
+node *copy(node *s)
+{
+    node *start = (node *)malloc(sizeof(node));
+    node *u = start;
+    while (s != NULL)
+    {
+        start->num = s->num;
+        s = s->next;
+        start->next = (node *)malloc(sizeof(node));
+        start = start->next;
+    }
+    return u;
+}
+
 void create(node *s)
 {
     char ch = 'y';
@@ -155,6 +192,11 @@ void main()
     node *start = (node *)malloc(sizeof(node));
     char ch;
     int pos;
+    node *start1 = (node *)malloc(sizeof(node)), *start2 = (node *)malloc(sizeof(node));
+    create(start1);
+    create(start2);
+    start = merge(start1, start2);
+    start = merge(start1, start2);
     while (1)
     {
         printf("Case 1: create\n");
